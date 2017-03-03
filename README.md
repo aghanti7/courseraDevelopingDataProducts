@@ -1,2 +1,1 @@
-# courseraDevelopingDataProducts
-Repository for Programming Assignments for Developing Data Models on Coursera
+Repository for Programming Assignments for Developing Data Products on Coursera (JHU)
