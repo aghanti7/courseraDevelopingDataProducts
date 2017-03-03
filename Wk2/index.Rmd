@@ -3,7 +3,8 @@ title: "Map of Mysore, India"
 #author: "Ajay Ghanti"
 date: "March 3, 2017"
 output:
-  html_document: default
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r mapCreate, echo=FALSE, warning=FALSE, message=FALSE}
