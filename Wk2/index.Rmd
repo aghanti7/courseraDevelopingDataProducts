@@ -1,0 +1,24 @@
+---
+title: "Map of Mysore, India"
+#author: "Ajay Ghanti"
+date: "March 3, 2017"
+output:
+  html_document: default
+---
+
+```{r mapCreate, echo=FALSE, warning=FALSE, message=FALSE}
+library(leaflet)
+
+#Create an interactive map of Mysore, India with points of tourist interest.
+# data frame with points of tourist interest
+# coordinates and labels
+poi <- data.frame(lat = c(12.30547, 12.3009, 12.3027, 12.3098, 12.2716, 12.30678, 12.2983, 12.2711, 12.2970, 12.30071, 12.3128, 12.27222, 12.3343, 12.32095, 12.30360, 12.30478, 12.30741, 12.30923, 12.30989, 12.31089, 12.32120, 12.32686),
+lng = c(76.65445, 76.6681, 76.6735, 76.6306, 76.6703, 76.64968, 76.6928, 76.6122, 76.6701, 76.65891, 76.6216, 76.67088, 76.6545, 76.65828, 76.65571, 76.65308, 76.65555, 76.65495, 76.65611, 76.65208, 76.63711, 76.63284),
+popup = c("Mysore Palace", "Sri Chamarajendra Zoological Gardens", "Karanji Kere", "Kukkarahalli Kere", "Chamundi Betta", "Jaganmohan Palace", "Lalitha Mahal Palace", "Lingambudhi Kere", "Race Course", "Dasara Exhibition Grounds", "Manasagangotri Campus", "Sri Chamundeshwari Temple", "Bannimantapa Maidana", "St. Philomena’s Church", "Shweta Varahaswamy Temple", "Lakshmiramana Temple", "Kote Anjaneya Temple", "Sri Rangacharlu Memorial Hall", "Dodda Gadiyaara", "Devaraja Market", "Cheluvamba Park", "Sri Lakshmi Venkataramanaswami Temple"))
+
+# create the map using leaflet; add clusters which look cleaner when zooming out/in
+poi %>%
+    leaflet() %>%
+    addTiles() %>%
+    addMarkers(popup = poi$popup, clusterOptions = markerClusterOptions())
+```
