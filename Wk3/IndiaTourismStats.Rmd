@@ -1,0 +1,34 @@
+---
+title: "India Tourism Statistics (1991-2011)"
+author: "Ajay Ghanti"
+date: "March 4, 2017"
+output: 
+  ioslides_presentation: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+library(tidyr)
+library(dplyr)
+```
+
+## India Tourism Statistics (1991-2011)
+
+```{r indiaTourismStats, warning=FALSE, message=FALSE, error=FALSE}
+tourismStats <- read.csv("IndiaTourismStats.csv")
+names(tourismStats) <- c("Year", "No. of Foreign Tourists (in 1000's)", "FX (Rs. Crores)", "FX (USD Millions)", "No. of Domestic Tourists (lakhs)")
+tourismStats$`No. of Foreign Tourists (in 1000's)` = tourismStats$`No. of Foreign Tourists (in 1000's)`/1000
+tourismStats$`No. of Domestic Tourists (lakhs)` = tourismStats$`No. of Domestic Tourists (lakhs)`/100000
+
+tourismStats <- as.data.frame(tourismStats[,2:5]) %>% gather(Statistic, Number) %>% mutate(Year = rep(1991:2011, 4))
+
+tourismStats %>% plot_ly(x = ~Year, y = ~Number, color = ~Statistic) %>% add_lines()
+```
+
+## Data Source
+
+- [Open Government Data (OGD) Platform India](https://data.gov.in)
+    + [Tourism Statistics of India Since 1991](https://data.gov.in/catalog/tourism-statistics-india)
+        + [Download dataset in CSV format](https://data.gov.in/node/92148/datastore/export/csv)
