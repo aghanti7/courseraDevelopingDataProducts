@@ -1,0 +1,84 @@
+---
+title       : Predicting Mid-Atlantic Wage Data
+subtitle    : Course Project - Developing Data Products
+author      : Ajay Ghanti
+job         : Coursera Data Science Specialization (JHU)
+framework   : revealjs        # {io2012, html5slides, shower, dzslides, ...}
+revealjs    :
+    theme   : moon
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+--- #title
+
+<style>
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal b {
+    color: blue;
+}
+
+</style>
+
+## Course Project<br/>Predicting Mid-Atlantic Wage Data
+
+Developing Data Products
+<br/>
+Coursera Data Science Specialization (JHU)
+
+<small>
+    March 8, 2017<br/><br/>
+    __Ajay Ghanti__<br/>
+    [LinkedIn](https://www.linkedin.com/in/ajayghanti) / [GitHub](https://github.com/aghanti7)
+</small>
+
+--- #intro
+
+## Course Project
+
+The goal of the assignment, as part of the Developing Data Products course by JHU on Coursera is to build the following:
+
+1. A <b>Shiny application</b> with some form of input widget, some operation on the UI input in `server.r`, some reactive output displayed as a result of server calculations, as well as enough documentation so that a novice user could use the application, and finally, deploy it on Rstudio's servers
+2. A <b>Reproducible Pitch Presentation</b> to pitch the app, that contains a 5 slide html5 slide deck, done in either Slidify or Rstudio Presenter, contains some embedded R code that gets run, and is pushed to and hosted on GitHub or Rpubs
+
+--- #data
+
+## The Data
+
+This application has been built to use the Wage dataset from the ISLR package, containing wage and other data for a group of 3000 workers in the Mid-Atlantic region.
+
+```{r echo=FALSE}
+library(ISLR)
+data(Wage)
+```
+```{r}
+summary(Wage)
+```
+
+--- #app
+
+## The App
+
+The Mid-Atlantic Wage dataset has 3000 observations on 12 variables. After some EDA, have picked 9 of these variables for our app. By default, we plot Age vs. Wage; what you need to do is pick upto 3 additional variables, and the app will redraw the plot as a facet grid.<br/><br/>The app also fits a regression model (linear is the default), which can be changed to one of the other choices displayed in the radio buttons under "Select Smoothing Method". You can also choose to display the confidence interval for the fitted line.
+
+--- #links
+
+## Give it a spin!
+
+Shiny App: [Predicting Mid-Atlantic Wage Data](https://ajayghanti.shinyapps.io/analyzeWagesShinyApp/)
+<br/>
+Slidify Presentation: [Reproducible Pitch](https://aghanti7.github.io/courseraDevelopingDataProducts/Wk4/analyzeWagesSlidifyPres/)
+
+<small>
+    Note: For best results, please view the app in full screen mode
+    <br/><br/>
+    Source Code:
+    <br/>[Shiny App](https://github.com/aghanti7/courseraDevelopingDataProducts/tree/gh-pages/Wk4/analyzeWagesShinyApp)
+    <br/>[Slidify Presentation](https://github.com/aghanti7/courseraDevelopingDataProducts/tree/gh-pages/Wk4/analyzeWagesSlidifyPres)
+</small>
+
+
