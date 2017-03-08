@@ -103,8 +103,6 @@ The Mid-Atlantic Wage dataset has 3000 observations on 12 variables. After some 
 ## Give it a spin!
 
 Shiny App: [Predicting Mid-Atlantic Wage Data](https://ajayghanti.shinyapps.io/analyzeWagesShinyApp/)
-<br/>
-Slidify Presentation: [Reproducible Pitch](https://aghanti7.github.io/courseraDevelopingDataProducts/Wk4/analyzeWagesSlidifyPres/)
 
 <small>
     Note: For best results, please view the app in full screen mode
