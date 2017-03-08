@@ -11,6 +11,9 @@ shinyUI(fluidPage(
     # Application title
     titlePanel("Predicting Mid-Atlantic Wage Data"),
     h5("Note: For best results, please view in full screen mode"),
+    h5(""),
+    h5("March 07, 2017"),
+    h5("Ajay Ghanti"),
 
     # Sidebar with:
     # Multi select input dropdown (upto three inputs)
